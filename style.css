@@ -1,50 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: aqua;
+    background-image: url("https://wallpapers.com/images/hd/book-with-white-flowers-tl9gtxj8d33m31ev.jpg");
+    transition: background 0.3s ease;
 }
 
-.container{
-    position: relative;
+.container {
     max-width: 300px;
     width: 100%;
     border-radius: 12px;
     padding: 10px 20px 20px;
-    background: white;
-    box-shadow: 0 5px 10px rgb(0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.1);
+    border:1px solid white ;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.display{
-    height: 80px;
+.display {
+    height: 60px;
     width: 100%;
-    outline: none;
-    border: none;
     text-align: right;
     margin-bottom: 10px;
     font-size: 25px;
-    color: darkblue;
+    color: rgb(249, 249, 250);
     pointer-events: none;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 
-.buttons{
+.history {
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: gray;
+    border-top: 1px solid lightgray;
+    padding-top: 5px;
+}
+
+.buttons {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.buttons button{
-    padding:  10px;
+button {
+    padding: 10px;
     border-radius: 6px;
     border: none;
     background-color: rgb(183, 231, 231);
@@ -52,10 +67,55 @@ body{
     cursor: pointer;
 }
 
-.buttons button:active{
-    transform: scale(0.99);
+.operator {
+    color: blue;
 }
 
-.operator{
-    color: blue ;
+.memory {
+    background: lightcoral;
+    color: white;
 }
+
+/* Dark mode styles */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #222;
+    color: white;
+}
+
+.dark-mode .display {
+    color: white;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .theme-toggle {
+    color: white;
+}
+
+.history-container {
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.history p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: rgb(254, 254, 255);
+}
+
